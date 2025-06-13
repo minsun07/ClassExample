@@ -42,9 +42,16 @@ namespace ClassExample
                 Console.WriteLine("자식 생성자 C");
             }
 
-
         }
 
+        public static int numer = 10;
+        static void Main(string[] args)
+        {
+            //섀도잉
+            int numbeer = 10;
+            Console.WriteLine(numbeer);  // 클래스 변수이름이 가려짐(shadowing)
+            Console.WriteLine(Program.numer);  // 호출하고 싶으면 클래스 변수명으로 사용
+        }
       
 
         static void Main(string[] args)
