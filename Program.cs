@@ -10,6 +10,12 @@ namespace ClassExample
     {
         class Parent
         {
+            public static int counter = 0;
+            public void CountParent()
+            {
+                Parent.counter++;
+            }
+
             public Parent() {Console.WriteLine("Parent()");}
             public Parent(string name) {Console.WriteLine("Parent(string name)"); }
             public Parent(int param) { Console.WriteLine("Parent(int param)"); }
@@ -19,6 +25,10 @@ namespace ClassExample
 
         class Child : Parent  // :으로 상속 받음
         {
+            public void CountChild()
+            {
+                Child.counter++;
+            }
             public Child() : base("child")
             {
                 Console.WriteLine("자식 생성자 A");
@@ -44,6 +54,15 @@ namespace ClassExample
             Child childB = new Child(3);
             // int < long < float < double
             // 4      8      4         8
+
+            Parent parent = new Parent();
+            Child child = new Child();
+
+            parent.CountParent();
+            child.CountChild();
+
+            Console.WriteLine(Parent.counter);
+            Console.WriteLine(Child.counter);
         }
 
         
