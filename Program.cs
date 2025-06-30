@@ -30,7 +30,7 @@ namespace ClassExample
 
         class Child : Parent  // :으로 상속 받음
         {
-            public string variable = "hiding";
+            public new string variable = "hiding";
             public void Method()
             {
                 Console.WriteLine("자식의 메소드");
