@@ -12,7 +12,11 @@ namespace ClassExample
         {
             public static int counter = 0;
             public int variable = 273;
-            public void Method()
+            public virtual void Method() // 하이딩용
+            {
+                Console.WriteLine("부모의 메소드");
+            }
+            public virtual void Method0()//오버라이딩용
             {
                 Console.WriteLine("부모의 메소드");
             }
@@ -31,7 +35,11 @@ namespace ClassExample
         class Child : Parent  // :으로 상속 받음
         {
             public new string variable = "hiding";
-            public void Method()
+            public override void Method()
+            {
+                Console.WriteLine("자식의 메소드");
+            }
+            public override void Method0()
             {
                 Console.WriteLine("자식의 메소드");
             }
@@ -86,8 +94,9 @@ namespace ClassExample
             Console.WriteLine(((Parent)child3).variable); // 숫자 variable 출력
 
             // 메서드 하이딩
-            child3.Method();
-            ((Parent)child3).Method();
+            child3.Method();  // 자식의 메서드 출력
+            ((Parent)child3).Method(); // 부모의 메서드 출력
+
         }
 
         
