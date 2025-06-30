@@ -97,6 +97,16 @@ namespace ClassExample
             child3.Method();  // 자식의 메서드 출력
             ((Parent)child3).Method(); // 부모의 메서드 출력
 
+            // 강아지오 고양이로 알아보는 메서드 하이딩, 오버라이딩 비교
+            List<Animal> Animals = new List<Animal>()
+            {
+                new Dog(), new Cat(), new Cat(), new Dog(),
+                new Dog(), new Cat(), new Dog(), new Dog()
+            };
+            foreach(var item in Animals)
+            {
+                item.Eat();
+            }
         }
 
         
